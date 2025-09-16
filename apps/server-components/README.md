@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# @np/server-components
 
-## Getting Started
+## Goal
+Understand the difference between **Server Components** and **Client Components** in Next.js.  
 
-First, run the development server:
+## Learning Tasks
+- [x] Render a Server Component with dynamic data (timestamp).  
+- [x] Render a Client Component with interactive state (button).  
+- [ ] Add a Server Action that mutates data on the server.  
+- [ ] Stream part of the page (use `Suspense`) and observe loading behavior.  
+- [ ] Fetch data from an API inside a Server Component.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Commands
+- `pnpm dev` – start this example  
+- `pnpm build` – build for production  
+- `pnpm start` – run the production server  
+- `pnpm lint` – run linter  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Files to Check
+- `/app/layout.tsx` — root layout wrapping the page  
+- `/app/page.tsx` — main page, combines server + client components  
+- `/app/server-message.tsx` — pure Server Component  
+- `/app/client-button.tsx` — pure Client Component with hydration  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Experiments to Try
+- Refresh the page and note how the **timestamp updates** (server render).  
+- Click the button and observe **client-side state updates** without reloading.  
+- Convert `server-message.tsx` into a Client Component by adding `"use client"` at the top — what changes?  
+- Try fetching from a public API inside `server-message.tsx` and see how the data loads.  
+- Wrap `client-button.tsx` in `<Suspense>` and add an artificial delay to observe streaming.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
