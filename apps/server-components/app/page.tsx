@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import ServerMessage from "./server-message";
 import ClientButton from "./client-button";
 import MessageForm from "./MessageForm";
+import SlowServer from "./slow-server";
 
 export default async function Page() {
   return (
@@ -8,6 +10,9 @@ export default async function Page() {
       <ServerMessage />
       <ClientButton />
       <MessageForm />
+      <Suspense fallback={<p className="text-gray-500">Loading slow server component...</p>}>
+        <SlowServer />
+      </Suspense>
     </div>
   );
 }
