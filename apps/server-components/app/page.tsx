@@ -3,6 +3,7 @@ import ServerMessage from "./server-message";
 import ClientButton from "./client-button";
 import MessageForm from "./MessageForm";
 import SlowServer from "./slow-server";
+import DogImage from "./dog-image";
 
 export default async function Page() {
   return (
@@ -13,6 +14,7 @@ export default async function Page() {
       <Suspense fallback={<p className="text-gray-500">Loading slow server component...</p>}>
         <SlowServer />
       </Suspense>
+      <DogImage />
     </div>
   );
 }
